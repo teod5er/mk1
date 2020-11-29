@@ -1,4 +1,4 @@
-                * {
+               * {
             margin: 0;
             padding: 0;
         }
@@ -344,6 +344,7 @@
             background-color: white;
             border: 1px solid transparent;
             display: block;
+            color: black;
         }
         
         .forma-okvir input[type=radio],
@@ -368,6 +369,7 @@
             cursor: pointer;
             background-color: rgba(169, 169, 169, 0.199);
             border: 1px solid darkgray;
+            color: black;
         }
         
         .forma-okvir label[for="SMS_obavijest"]:hover {
@@ -479,6 +481,7 @@
             background-size: 80%;
             overflow: auto;
             min-height: 14em;
+            padding-bottom: 3em;
         }
         
         .footer-trecina {
@@ -502,6 +505,31 @@
         
         .footer-trecina p {
             color: rgba(0, 0, 0, 0.589);
+        }
+        
+        .testno {
+            width: 17.5%;
+            transform: scale(0.8) perspective(550px) rotateZ(0deg) rotateY(30deg);
+            margin-right: -5em;
+            transition: 0.3s;
+            border-radius: 0.8em;
+            border-radius: 10px;
+            overflow: auto;
+        }
+        
+        .testno:hover {
+            transform: translateY(-0.5em) scale(0.9) perspective(250px) rotateZ(0deg) rotateY(5deg);
+            position: relative;
+            margin-right: -3em;
+        }
+        
+        .testno-grupa {
+            width: 70%;
+            margin: auto;
+            margin-bottom: 4em;
+            text-align: center;
+            overflow: hidden;
+            transform: translatex(-3em);
         }
         
         @media only screen and (max-width: 700px) {
@@ -580,29 +608,18 @@
             table tr td {
                 padding: 0.3em;
             }
-        }
-        
-        .testno {
-            width: 17.5%;
-            transform: scale(0.8) perspective(550px) rotateZ(0deg) rotateY(30deg);
-            margin-right: -5em;
-            transition: 0.3s;
-            border-radius: 0.8em;
-            border-radius: 10px;
-            overflow: auto;
-        }
-        
-        .testno:hover {
-            transform: translateY(-0.5em) scale(0.9) perspective(250px) rotateZ(0deg) rotateY(5deg);
-            position: relative;
-            margin-right: -3em;
-        }
-        
-        .testno-grupa {
-            width: 70%;
-            margin: auto;
-            margin-bottom: 4em;
-            text-align: center;
-            overflow: hidden;
-            transform: translatex(-3em);
+            .footer-trecina {
+                width: 100%;
+                margin-top: 0.5em;
+                padding: 0;
+            }
+            .footer-trecina img {
+                margin-top: 1em;
+            }
+            .footer-trecina h3 {
+                margin-bottom: 0.5em;
+            }
+            .testno-grupa {
+                display: none;
+            }
         }
