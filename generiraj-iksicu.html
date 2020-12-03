@@ -219,6 +219,26 @@
         h5:hover {
             color: rgba(255, 255, 255, 0.959);
         }
+        
+        .napomena {
+            font-size: 1.2em;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            display: block;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            display: none;
+        }
+        
+        @media only screen and (max-width: 500px) {
+            .napomena {
+                display: block;
+            }
+            .okvir1 {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -308,6 +328,8 @@
     <a href="index.html">
         <h5>Povratak na naslovnu stranicu</h5>
     </a>
+
+    <p class="napomena">Oprosti, ali iksicu ćeš morati generirati na nešto većem ekranu!</p>
 
 
     <script>
