@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Pametna studentska iskaznica</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@600&family=Roboto:wght@400;900&display=swap');
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url('img/unizg.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #0d1c30;
+        }
+        
+        .okvir1 {
+            height: 640px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+            width: 800px;
+            margin-top: 2em;
+            border-radius: 15px;
+            padding: 50px;
+            padding-right: 300px;
+            box-sizing: border-box;
+            backdrop-filter: blur(30px);
+            background-color: rgba(255, 255, 255, 0.753);
+            box-shadow: 0px 0px 47px -17px rgba(0, 0, 0, 0.75);
+        }
+        
+        .okvir2-iframe {
+            height: 506px;
+            width: 318.5px;
+            position: absolute;
+            right: -50px;
+            top: 45px;
+            background-color: rgba(240, 248, 255, 0.171);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 0px;
+            box-shadow: 0px 0px 47px -17px rgba(0, 0, 0, 0.75);
+            display: block;
+            animation: iksica infinite 5s linear;
+        }
+        
+        @keyframes iksica {
+            0% {
+                transform: perspective(550px) rotateY(0deg) scale(.9);
+            }
+            50% {
+                transform: perspective(550px) rotateY(-15deg) rotateZ(10deg) scale(.9);
+            }
+            100% {
+                transform: perspective(550px) rotateY(0deg) scale(.9);
+            }
+        }
+        
+        #iks-ifr {
+            width: 100%;
+            height: 100%;
+            border: none;
+            margin: 0px;
+            overflow-x: hidden;
+        }
+        
+        #ime {
+            position: absolute;
+            bottom: 244px;
+            left: 83px;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            text-transform: uppercase;
+            margin: 0px;
+        }
+        
+        #prezime {
+            position: absolute;
+            bottom: 205px;
+            font-weight: 900;
+            left: 83px;
+            font-size: 18px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        #fakultet {
+            position: absolute;
+            bottom: 93px;
+            font-family: 'Piazzolla', serif;
+            left: 83px;
+            font-size: 18px;
+            color: white;
+            text-transform: capitalize;
+        }
+        
+        .okvir1 h1 {
+            color: black;
+            font-family: 'Piazzolla', serif;
+            margin-top: 0px;
+        }
+        
+        input[id="ime_input"],
+        input[id="prezime_input"],
+        input[id="faks_input"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.6em;
+            border-radius: 0.5em;
+            font-size: 1em;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0.5em;
+            border: none;
+            border: 1px solid gray;
+            display: inline-block;
+            color: black;
+            text-transform: capitalize;
+            background-color: transparent;
+        }
+        
+        input[id="ime_input"]:hover,
+        input[id="prezime_input"]:hover,
+        input[id="faks_input"]:hover,
+        input[id="ime_input"]:focus,
+        input[id="prezime_input"]:focus,
+        input[id="faks_input"]:focus {
+            outline: none;
+            border: 1px solid rgb(155, 154, 154);
+        }
+        
+        button,
+        button:focus,
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.822);
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.6em;
+            border-radius: 0.5em;
+            font-size: 1em;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0.5em;
+            border: none;
+            border: 1px solid transparent;
+            display: inline-block;
+            color: black;
+            text-transform: capitalize;
+        }
+        
+        button:hover,
+        button:focus {
+            background-color: white;
+        }
+        
+        fieldset {
+            border: none;
+            padding: 0px;
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            font-family: 'Piazzolla', serif;
+            font-size: 17px;
+            color: rgb(196, 196, 196)136, 136);
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            column-count: 2;
+            column-gap: 0.5em;
+        }
+        
+        li {
+            padding: 10px;
+            border-radius: 0.5em;
+            margin-bottom: 0.5em;
+            background-color: white;
+            border: 1px solid transparent;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9em;
+        }
+        
+        li:hover {
+            border: 1px solid rgb(155, 154, 154);
+        }
+        
+        label:hover {
+            cursor: pointer;
+        }
+        
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        
+        h5 {
+            width: 100%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.712);
+            font-weight: normal;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h5:hover {
+            color: rgba(255, 255, 255, 0.959);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="okvir1">
+        <div class="okvir2-iframe">
+            <p id="ime">IME</p>
+            <p id="prezime">PREZIME</p>
+            <p id="fakultet">Naziv fakulteta</p>
+
+            <iframe id="iks-ifr" name="iks-ifr1" src="img-iks-novo/Iks1.png" frameborder="0" seamless></iframe>
+        </div>
+        <h1>Generiraj svoju iksicu!</h1>
+
+
+        <fieldset>
+            <legend>Tvoji podaci</legend>
+            <input type="text" placeholder="Tvoje ime" id="ime_input">
+            <input type="text" placeholder="Tvoje prezime" id="prezime_input">
+            <input type="text" placeholder="Naziv fakulteta" id="faks_input">
+
+
+            <button type="button" onclick="ImePrezime();">Primijeni</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Odaberi područje kojem tvoj faks pripada</legend>
+            <ul>
+
+                <li>
+                    <a href="img-iks-novo/Iks2.png" target="iks-ifr1">
+                        Biomedicina i zdravstvo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks3.png" target="iks-ifr1">
+                        Biotehničke znanosti
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks4.png" target="iks-ifr1">
+                        Društvene znanosti
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks5.png" target="iks-ifr1">
+                        Humanističke znanosti
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks6.png" target="iks-ifr1">
+                        Prirodne znanosti
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks1.png" target="iks-ifr1">
+                        Tehničke znanosti
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks7.png" target="iks-ifr1">
+                        Umjetničko područje
+                    </a>
+                </li>
+
+                <li>
+                    <a href="img-iks-novo/Iks8.png" target="iks-ifr1">
+                        Interdisciplinarne znanosti
+                    </a>
+                </li>
+
+            </ul>
+        </fieldset>
+
+    </div>
+
+    <a href="index.html">
+        <h5>Povratak na naslovnu stranicu</h5>
+    </a>
+
+
+    <script>
+        function ImePrezime() {
+            document.getElementById("ime").innerHTML = document.getElementById("ime_input").value;
+            document.getElementById("prezime").innerHTML = document.getElementById("prezime_input").value;
+            document.getElementById("fakultet").innerHTML = document.getElementById("faks_input").value;
+
+        }
+    </script>
+</body>
+
+</html>
