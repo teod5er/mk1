@@ -1,4 +1,4 @@
-               * {
+                      * {
             margin: 0;
             padding: 0;
         }
@@ -46,7 +46,8 @@
             z-index: 3;
             position: fixed;
             top: 0px;
-            background-color: #0d1c30;
+            background-color: #0d1c309c;
+            backdrop-filter: blur(10px);
             ;
         }
         
@@ -67,11 +68,16 @@
             margin-right: 1em;
             color: white;
             padding: 0.4em 0.1em 0.4em 0em;
+            padding-bottom: 0.3em;
+            animation: prozirnost .9s;
+            transition: opacity .2s;
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
         }
         
         nav li:hover {
             opacity: 1;
             cursor: pointer;
+            border-bottom: 2px solid white;
         }
         
         nav ul button {
@@ -85,10 +91,21 @@
             color: white;
             opacity: .7;
             float: right;
+            transition: border .2s;
         }
         
         nav ul button:hover {
             opacity: 1;
+            border: 2px solid white;
+        }
+        
+        @keyframes prozirnost {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: .7;
+            }
         }
         /* ----------------------------------------------*/
         
@@ -150,6 +167,7 @@
             font-size: 1.1em;
             color: white;
             margin-top: 2em;
+            transition: border .2s;
         }
         
         .hero-cont-box button:hover {
@@ -169,6 +187,18 @@
             padding-right: 20%;
             font-family: 'Piazzolla', serif;
             line-height: 1.2em;
+            animation: naslov-ani 1s;
+        }
+        
+        @keyframes naslov-ani {
+            0% {
+                transform: translateY(-1em);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0em);
+                opacity: 1;
+            }
         }
         
         .podnaslov {
@@ -182,6 +212,18 @@
             margin: 0px;
             margin-bottom: 0.8em;
             padding-right: 15%;
+            animation: sadrzaj 0.9s;
+        }
+        
+        @keyframes sadrzaj {
+            from {
+                transform: translateY(1em);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0em);
+                opacity: 0.9;
+            }
         }
         
         .desno {
@@ -201,7 +243,7 @@
             display: block;
             margin-bottom: 3em;
             box-sizing: border-box;
-            /*transform: perspective(150px) rotateY(0.4deg);*/
+            transform: perspective(150px) rotateY(0.4deg);
         }
         
         .container-box>.naslov {
@@ -244,6 +286,56 @@
             box-shadow: 2px 6px 25px -3px rgba(148, 4, 42, 0.281);
         }
         /***************/
+        
+        .iksica-okvir-vanjski {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            min-height: 25em;
+            padding-top: 1em;
+        }
+        
+        .iksica-okvir {
+            width: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: iks 5s infinite;
+        }
+        
+        .iksica-prednja-str,
+        .iksica-straznja-str {
+            width: 100%;
+            padding-bottom: 150%;
+            border-radius: 0.9em;
+            background-size: cover;
+            top: 0px;
+            position: absolute;
+            box-shadow: 0px 0px 0.5em rgba(27, 24, 25, 0.151);
+            background-position: center center;
+        }
+        
+        .iksica-prednja-str {
+            background-image: url(img/Iks1.png);
+            backface-visibility: hidden;
+        }
+        
+        .iksica-straznja-str {
+            background-image: url(img/Iks-iza.png);
+            transform: rotateY(180deg);
+        }
+        
+        @keyframes iks {
+            0% {
+                transform: perspective(1300px) rotateX(10deg) rotateY(-10deg);
+            }
+            50% {
+                transform: perspective(1300px) rotateZ(5deg) rotateY(180deg);
+            }
+            100% {
+                transform: perspective(1300px) rotateX(10deg) rotateY(-10deg);
+            }
+        }
+        /****************/
         
         section {
             width: 60%;
@@ -454,12 +546,14 @@
         table th {
             border-bottom: 2px solid white;
             padding-bottom: 1em;
+            font-family: 'Piazzolla', serif;
         }
         
         table tr td {
             padding: 1em;
             text-align: center;
             border-bottom: 2px solid white;
+            transition: background-color .1s;
         }
         
         tr:hover td {
