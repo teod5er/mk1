@@ -320,7 +320,7 @@
         }
         
         .iksica-straznja-str {
-            background-image: url(img/Iks-iza.png);
+            background-image: url("img/Iks-iza.png");
             transform: rotateY(180deg);
         }
         
