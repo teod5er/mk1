@@ -1,4 +1,4 @@
-                      * {
+           * {
             margin: 0;
             padding: 0;
         }
@@ -48,7 +48,9 @@
             top: 0px;
             background-color: #0d1c309c;
             backdrop-filter: blur(10px);
-            ;
+            -webkit-box-shadow: 0px 7px 26px -15px rgba(0, 0, 0, 0.74);
+            -moz-box-shadow: 0px 7px 26px -15px rgba(0, 0, 0, 0.74);
+            box-shadow: 0px 7px 26px -15px rgba(0, 0, 0, 0.74);
         }
         
         nav {
@@ -78,33 +80,18 @@
             color: white;
             padding: 0.4em 0.1em 0.4em 0em;
             padding-bottom: 0.3em;
-            animation: prozirnost .9s ease;
             transition: opacity .2s;
             border-bottom: 2px solid rgba(255, 255, 255, 0);
+            animation: navigacija 2s;
         }
         
-        li:nth-child(1) {
-            animation-delay: 0.0s;
-        }
-        
-        li:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-        
-        li:nth-child(3) {
-            animation-delay: 1.0s;
-        }
-        
-        li:nth-child(4) {
-            animation-delay: 1.5s;
-        }
-        
-        li:nth-child(5) {
-            animation-delay: 2.0s;
-        }
-        
-        li:nth-child(6) {
-            animation-delay: 2.5s;
+        @keyframes navigacija {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.7;
+            }
         }
         
         nav li:hover {
@@ -117,19 +104,20 @@
             background: none;
             cursor: pointer;
             outline: inherit;
-            border: 2px solid rgba(255, 255, 255, 0.589);
-            padding: 0.4em 0.7em 0.4em 0.7em;
+            border: 2px solid rgba(0, 0, 0, 0.089);
+            padding: 0.5em 0.7em 0.5em 0.7em;
             border-radius: 1.5em;
             font-size: 1em;
             color: white;
             opacity: .7;
             float: right;
             transition: border .2s;
+            background-color: #7b0048;
         }
         
         nav ul button:hover {
             opacity: 1;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 255, 255, 0.26);
         }
         /* ----------------------------------------------*/
         
@@ -168,7 +156,7 @@
             border-radius: 0.9em;
             box-shadow: 20px 6px 5em rgba(27, 24, 25, 0.575);
             transform: scale(1.2) perspective(250px) rotateZ(10deg) rotateY(-15deg);
-            animation: iksica 1.5s;
+            animation: iksica 3s ease-in-out infinite alternate;
         }
         
         @keyframes iksica {
