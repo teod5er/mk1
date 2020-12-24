@@ -61,6 +61,15 @@
             padding: 0px;
         }
         
+        @keyframes prozirnost {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: .7;
+            }
+        }
+        
         nav li {
             display: inline-block;
             font-size: 1.1em;
@@ -69,9 +78,33 @@
             color: white;
             padding: 0.4em 0.1em 0.4em 0em;
             padding-bottom: 0.3em;
-            animation: prozirnost .9s;
+            animation: prozirnost .9s ease;
             transition: opacity .2s;
             border-bottom: 2px solid rgba(255, 255, 255, 0);
+        }
+        
+        li:nth-child(1) {
+            animation-delay: 0.0s;
+        }
+        
+        li:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        li:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+        
+        li:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        
+        li:nth-child(5) {
+            animation-delay: 2.0s;
+        }
+        
+        li:nth-child(6) {
+            animation-delay: 2.5s;
         }
         
         nav li:hover {
@@ -97,15 +130,6 @@
         nav ul button:hover {
             opacity: 1;
             border: 2px solid white;
-        }
-        
-        @keyframes prozirnost {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: .7;
-            }
         }
         /* ----------------------------------------------*/
         
@@ -320,7 +344,7 @@
         }
         
         .iksica-straznja-str {
-            background-image: url("img/Iks-iza.png");
+            background-image: url(img/Iks-iza.png);
             transform: rotateY(180deg);
         }
         
